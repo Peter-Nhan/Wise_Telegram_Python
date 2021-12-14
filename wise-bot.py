@@ -56,7 +56,7 @@ def tw_on(update: Update, context: CallbackContext) -> None:
         # args[0] should contain the time for the timer in seconds
         AudUsdExchange = float(context.args[0])
         if AudUsdExchange < 0:
-            update.message.reply_text('Sorry we can not go back to future!')
+            update.message.reply_text('Negative Exchange rates?')
             return
 
         job_removed = remove_job_if_exists(str(chat_id), context)
